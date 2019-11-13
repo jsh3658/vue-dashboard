@@ -1,32 +1,15 @@
-# Project
+# Dashboard
 
-## Dashboard
-```
-1. vue 2.x 사용
-2. airbnbdatepicker
-3. xlxs.js(Excel)
-4. 
-```
+> Dashboard UI component for Vue
 
-### Compiles and hot-reloads for development
+> DataTable, Chart, datePicker, filter, Excel 등의 탬플릿 화면이다.
+
+
+## Development
 ```
-yarn run serve
+npm install
+npm serve start
 ```
 
-### Compiles and minifies for production
-```
-yarn run build
-```
 
-### Run your tests
-```
-yarn run test
-```
 
-### Lints and fixes files
-```
-yarn run lint
-```
-
-### Customize configuration
-See [Configuration Reference](https://cli.vuejs.org/config/).
