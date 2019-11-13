@@ -1,7 +1,4 @@
 <h1 align="center">Dashboard UI component for Vue</h1>
-<br>
-<br>
-
 <span style="margin:0 2px"><img src="https://img.shields.io/badge/framework-vue2.6.6-brightgreen.svg" ></span>
 <span style="margin:0 2px"><img src="https://img.shields.io/badge/style-sass-yellowgreen.svg" ></span>
 <span style="margin:0 2px"><img src="https://img.shields.io/badge/datePicker-airbnbDatepicker-red.svg" ></span>
