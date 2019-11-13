@@ -25,7 +25,7 @@
 
             }
         },
-        components: { DatePicker},
+        components: { DatePicker },
         methods: {
             update(s, e) {
                 this.date.start = s;

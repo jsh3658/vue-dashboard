@@ -44,8 +44,8 @@ export const navi = [
                 ]
             },
             {
-                label: 'RadioBox',
-                path: '/radioBox'
+                label: 'Button',
+                path: '/button'
             },
         ]
     }

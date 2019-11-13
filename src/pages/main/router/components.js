@@ -6,7 +6,7 @@ import Filter from '../views/filter/filter.vue'
 import DatePicker from '../views/datepicker/datepicker.vue'
 import Excel from '../views/excel/excel.vue'
 import Tab from '../views/tab/tab.vue'
-import RadioBox from '../views/radioBox/radioBox.vue'
+import Button from '../views/button/button.vue'
 
 const requireAuth = (to, from, next) => {
     let cookies = true;
@@ -25,6 +25,6 @@ export const Components = [
     { path: '/datePicker', component: DatePicker, beforeEnter: requireAuth },
     { path: '/excel', component: Excel, beforeEnter: requireAuth },
     { path: '/tab', component: Tab, beforeEnter: requireAuth },
-    { path: '/radioBox', component: RadioBox, beforeEnter: requireAuth },
+    { path: '/button', component: Button, beforeEnter: requireAuth },
     { path: '/*', component: Main, beforeEnter: requireAuth },
 ];

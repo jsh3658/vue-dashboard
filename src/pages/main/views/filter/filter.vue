@@ -11,12 +11,12 @@
         name: "filters",
         data() {
             return{
-                filterActive : 'B', // -1 : All Tab Active
+                filterActive : 'A', // -1 : All Tab Active
                 filter: {
                     A: {
                         title: 'Title1',
                         default: ['Filter02', 'Filter05', 'Filter07', 'Filter08', 'Filter12'],
-                        lists: ['Filter01', 'Filter02', 'Filter03', 'Filter04', 'Filter05', 'Filter06', 'Filter07', 'Filter08', 'Filter08', 'Filter10', 'Filter11', 'Filter12', 'Filter13'],
+                        lists: ['Filter01', 'Filter02', 'Filter03', 'Filter04', 'Filter05', 'Filter06', 'Filter07', 'Filter08', 'Filter09', 'Filter10', 'Filter11', 'Filter12', 'Filter13'],
                         selected: [],
                         confirm: []
                     },

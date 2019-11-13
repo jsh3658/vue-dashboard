@@ -26,10 +26,6 @@
                     start: date.AWeekAgo,
                     end: date.Yesterday,
                 },
-                activeTab: 0,
-                size: 6,
-                prev: 6,
-                active: 0,
                 loading: {
                     table: true
                 }
@@ -44,11 +40,6 @@
             ...mapState(['dataSets', 'error']),
         },
         methods: {
-            resetPage() {
-                this.active = 0;
-                this.size = 6;
-                this.prev = 6;
-            },
             dataTable() {
                 let dashBoardURL = domain.url + '';
                 let args = {
