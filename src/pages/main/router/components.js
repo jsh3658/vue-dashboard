@@ -1,0 +1,30 @@
+import Main from '../views/main/main.vue';
+import ChartLine from '../views/chart/line.vue';
+import ChartBar from '../views/chart/bar.vue';
+import DataTable from '../views/dataTable/dataTable.vue'
+import Filter from '../views/filter/filter.vue'
+import DatePicker from '../views/datepicker/datepicker.vue'
+import Excel from '../views/excel/excel.vue'
+import Tab from '../views/tab/tab.vue'
+import RadioBox from '../views/radioBox/radioBox.vue'
+
+const requireAuth = (to, from, next) => {
+    let cookies = true;
+
+    if(cookies) {
+        next();
+    }
+};
+
+export const Components = [
+    { path: '/main', component: Main, beforeEnter: requireAuth },
+    { path: '/chart/line', component: ChartLine, beforeEnter: requireAuth },
+    { path: '/chart/bar', component: ChartBar, beforeEnter: requireAuth },
+    { path: '/dataTable', component: DataTable, beforeEnter: requireAuth },
+    { path: '/filter', component: Filter, beforeEnter: requireAuth },
+    { path: '/datePicker', component: DatePicker, beforeEnter: requireAuth },
+    { path: '/excel', component: Excel, beforeEnter: requireAuth },
+    { path: '/tab', component: Tab, beforeEnter: requireAuth },
+    { path: '/radioBox', component: RadioBox, beforeEnter: requireAuth },
+    { path: '/*', component: Main, beforeEnter: requireAuth },
+];

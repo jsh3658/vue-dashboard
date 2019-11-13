@@ -1,0 +1,203 @@
+/* initial */
+html{@extend .borderBox; height:100%;}
+*, *:before, *:after {box-sizing: inherit;}
+body{height:100%;}
+body,p,h1,h2,h3,h4,h5,h6,ul,ol,li,dl,dt,dd,table,th,td,form,fieldset,legend,input,textarea,button{margin:0;padding:0}
+body,h1,h2,h3,h4,input,button,table{font-family:'airBook';font-size:12px;line-height:17px}
+img,fieldset,iframe{border:0 none}
+img{vertical-align:top;}
+ul,ol{list-style:none}
+em,address,var{font-style:normal}
+table{border-collapse:collapse;border-spacing:0}
+legend,caption,.hide{position:absolute;overflow:hidden;visibility:hidden;height:0;font-size:0;line-height:0}
+a{text-decoration:none;color:#222;}
+a:hover, a:active, a:focus{text-decoration:none}
+i{font-style:normal;}
+input{border:0;}
+input,select,textarea,button{vertical-align:middle;outline:none;}
+input::-ms-clear{display:none}
+button{border:0 none;background-color:transparent;cursor:pointer;outline:none;}
+:focus{outline: 0;}
+.blind{width:0;height:0;font-size:0;line-height:0;opacity:0;display:none;visibility:hidden;text-indent:-9999px;}
+/* initial */
+
+
+
+/* font-family */
+$font-path: '~@/assets/fonts/';
+
+@font-face {
+  font-family: 'airLight';
+  src: url($font-path + '/airbnb/Light/Light.ttf');
+}
+
+@font-face {
+  font-family: 'airMedium';
+  src: url($font-path + 'airbnb/Medium/Medium.ttf');
+}
+
+@font-face {
+  font-family: 'airBook';
+  src: url($font-path + 'airbnb/Book/Book.ttf');
+}
+
+@font-face {
+  font-family: 'airBlack';
+  src: url($font-path + 'airbnb/Black/Black.ttf');
+}
+
+@font-face {
+  font-family: 'airBold';
+  src: url($font-path + 'airbnb/Bold/Bold.ttf');
+}
+
+@font-face {
+  font-family: 'airExtraBold';
+  src: url($font-path + 'airbnb/ExtraBold/ExtraBold.ttf');
+}
+
+
+/* mixin */
+@mixin myGradient($pos1, $pos2, $start, $end, $startColor, $endColor, $startHexColor, $endHexColor){
+  background: -webkit-linear-gradient($pos1, $startColor $start, $endColor $end); /* Chrome10-25,Safari5.1-6 */
+  background: -moz-linear-gradient($pos1, $startColor $start, $endColor $end); /* FF3.6-15 */
+  background: linear-gradient(to $pos2, $startColor $start, $endColor $end); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr=$startHexColor, endColorstr=$endHexColor,GradientType=0 ); /* IE6-9 */
+}
+
+@mixin translate($transform...) {
+  -webkit-transform: translate($transform);
+  -moz-transform: translate($transform);
+  -o-transform: translate($transform);
+  -ms-transform: translate($transform);
+  transform: translate($transform);
+}
+
+@mixin transformRotate($rotate) {
+  -webkit-transform: rotate($rotate);
+  -moz-transform: rotate($rotate);
+  -o-transform: rotate($rotate);
+  -ms-transform: rotate($rotate);
+  transform: rotate($rotate);
+}
+
+@mixin transformScale($s) {
+  -webkit-transform:scale($s);
+  -moz-transform:scale($s);
+  -o-transform:scale($s);
+  -ms-transform:scale($s);
+  transform:scale($s);
+}
+
+@mixin transformOrigin($p1, $p2){
+  -webkit-transform-origin:$p1 $p2;
+  -ms-transform-origin:$p1 $p2;
+  -moz-transform-origin:$p1 $p2;
+  -o-transform-origin:$p1 $p2;
+  transform-origin:$p1 $p2;
+}
+
+@mixin transition($property...) {
+  -webkit-transition: $property; /* Safari */
+  -moz-transition: $property; /* firefox */
+  -o-transition: $property; /* Opera */
+  transition: $property;
+}
+
+@mixin borderRadius($radius...) {
+  -webkit-border-radius: $radius; /* Safari */
+  -moz-border-radius: $radius; /* firefox */
+  transition: $radius;
+}
+
+@mixin boxShadow($shadow...) {
+  -webkit-box-shadow: $shadow;
+  -moz-box-shadow: $shadow;
+  box-shadow: $shadow;
+}
+
+@mixin keyframes($name) {
+  @-webkit-keyframes #{$name} {
+    @content;
+  }
+  @-moz-keyframes #{$name} {
+    @content;
+  }
+  @-ms-keyframes #{$name} {
+    @content;
+  }
+  @keyframes #{$name} {
+    @content;
+  }
+}
+
+$checkBoxColor: #0090d9;
+@keyframes checkbox-animation {
+  0% {
+    border-color:#fff;
+    border-top-color: $checkBoxColor;
+    transform: rotate(0) scale(1);
+  }
+  20% {
+    border-color:#fff;
+    border-top-color: $checkBoxColor;
+  }
+  40% {
+    border-color:#fff;
+    border-top-color: $checkBoxColor;
+    background: transparent;
+    transform: rotate(360deg) scale(1);
+  }
+  60% {
+    border-color:$checkBoxColor;
+    background: $checkBoxColor;
+    transform: rotate(360deg) scale(1.2);
+  }
+  80% {
+    border-color:$checkBoxColor;
+    background: $checkBoxColor;
+  }
+  100% {
+    border-color:$checkBoxColor;
+    background: $checkBoxColor;
+    transform: rotate(360deg) scale(1);
+  }
+}
+
+@keyframes checkbox-symbol-animation {
+  0% { opacity: 0; }
+  20% { opacity: 0; }
+  40% { opacity: 0; }
+  60% { opacity: 1; }
+  80% { opacity: 1; }
+  100% { opacity: 1; }
+}
+
+/* extend */
+.boundary {
+  position: absolute;
+  top:50%;
+  left:0;
+  width:1px;
+  height:19px;
+  background:#e6e6e6;
+  @include translate(0, -50%);
+}
+
+.borderBox {
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+.input-style {
+  background: rgba(255, 255, 255, 0.3);
+  color: #fff;
+  font-size: 13px;
+  text-align: center;
+  letter-spacing: 0.5px;
+  font-family: 'airBook';
+  font-weight: 700;
+}
+
+
