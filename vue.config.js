@@ -1,3 +1,5 @@
+const path = require('path');
+
 module.exports = {
     pages: {
         index: {
@@ -17,6 +19,13 @@ module.exports = {
         loaderOptions: {
             sass: {
                 data: `@import "~@/assets/scss/reset.scss";`
+            }
+        }
+    },
+    configureWebpack: {
+        resolve: {
+            alias: {
+                '@': path.join(__dirname, 'src/')
             }
         }
     }
