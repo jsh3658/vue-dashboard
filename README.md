@@ -2,8 +2,8 @@
 <span style="margin:0 2px"><img src="https://img.shields.io/badge/framework-vue2.6.6-brightgreen.svg" ></span>
 <span style="margin:0 2px"><img src="https://img.shields.io/badge/style-sass-yellowgreen.svg" ></span>
 <span style="margin:0 2px"><img src="https://img.shields.io/badge/datePicker-airbnbDatepicker-red.svg" ></span>
-<span style="margin:0 2px"><img src="https://img.shields.io/github/languages/code-size/beygee/survive.svg" ></span>
 <span style="margin:0 2px"><img src="https://img.shields.io/badge/API-Nodejs-blue.svg" ></span>
+<span style="margin:0 2px"><img src="https://img.shields.io/github/languages/code-size/beygee/survive.svg" ></span>
 
 ## Main
 - Material Design
@@ -44,8 +44,42 @@ import DataTable from 'dataTable.vue';
 
 ```
 
-> Filter
+> DatePicker
+- start, end 날짜를 꼭 넣어주어야 한다
+```
+import DatePicker from 'datePicker.vue';
 
+<date-picker @updateDate="" :start="" :end=""/>
+
+```
+
+> Filter
+- filter `type: Object`
+- filterActive : 활성화 될 key값을 사용한다 `type: String`
+```
+import filter from 'myFilter.vue';
+
+<filter :filter="filter" :filterActive="'ONE'" />
+
+
+filter: {
+    ONE: {
+        title: 'Title1',
+        default: ['Filter02', 'Filter05', 'Filter07', 'Filter08', 'Filter12'],
+        lists: ['Filter01', 'Filter02', 'Filter03', 'Filter04', 'Filter05', 'Filter06', 'Filter07', 'Filter08', 'Filter08', 'Filter10', 'Filter11', 'Filter12', 'Filter13'],
+        selected: [],
+        confirm: []
+    },
+    TWO: {
+        title: 'Title2',
+        default: ['A', 'D'],
+        lists: ['A', 'B', 'C', 'D'],
+        selected: [],
+        confirm: []
+    }
+}
+
+```
     
         
 
