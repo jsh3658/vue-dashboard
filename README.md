@@ -11,8 +11,14 @@
 - Node js를 이용하여 Restful API개발
 
 
+## Development
+```
+npm install
+npm serve start
+```
+
 ## 사용법
-###Chart
+> Chart
 - chartData : Data
 - id : 차트 ID(고유한 값)
 - dataEnum : Name변경 `type: Object`
@@ -23,7 +29,7 @@
   <Chart :chartData="" :id="" :dataEnum=""/>
 ```
 
-###DataTable
+> DataTable
 - title : 제목
 - tableData : Data
 - size : 테이블 사이즈
@@ -37,12 +43,11 @@ import DataTable from 'dataTable.vue';
 <data-table :title="" :tableData="" :size="" :dataEnum="" @currentPage="" @allPage="" @listSize=""/>
 
 ```
+
+> Filter
+
     
         
 
 
-## Development
-```
-npm install
-npm serve start
-```
+
