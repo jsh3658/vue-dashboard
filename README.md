@@ -1,10 +1,13 @@
-# Dashboard
+# Dashboard Project
 
-> Dashboard UI component for Vue
+> Dashboard UI component for <span style="color:red">Vue</span>
 
-https://img.shields.io/badge/framework-vue2.6.6-brightgreen
+[![framework][https://img.shields.io/badge/framework-vue2.6.6-brightgreen.svg]
 https://img.shields.io/badge/style-sass-yellowgreen
 https://img.shields.io/badge/datePicker-airbnbDatepicker-red
+https://img.shields.io/github/languages/code-size/beygee/survive
+https://img.shields.io/github/commit-activity/w/beygee/survive
+
 
 
 ## content
