@@ -1,12 +1,12 @@
 {
   "contents": [
-    {"date": "2019-12-30", "name": "A", "score": 120, "country": "한국"},
-    {"date": "2019-12-29", "name": "B", "score": 531, "country": "중국"},
-    {"date": "2019-12-28", "name": "C", "score": 33, "country": "미국"},
-    {"date": "2019-12-27", "name": "D", "score": 49, "country": "독일"},
-    {"date": "2019-12-26", "name": "E", "score": 80, "country": "스위스"},
-    {"date": "2019-12-25", "name": "F", "score": 11, "country": "인도"},
-    {"date": "2019-12-24", "name": "G", "score": 221, "country": "이탈리아"}
+    {"date": "2019-12-30", "name": "A", "score": 120, "price": 10},
+    {"date": "2019-12-29", "name": "B", "score": 531, "price": 21},
+    {"date": "2019-12-28", "name": "C", "score": 33, "price": 51},
+    {"date": "2019-12-27", "name": "D", "score": 49, "price": 64},
+    {"date": "2019-12-26", "name": "E", "score": 80, "price": 90},
+    {"date": "2019-12-25", "name": "F", "score": 11, "price": 143},
+    {"date": "2019-12-24", "name": "G", "score": 221, "price": 689}
   ],
   "totalSize": 15
 }

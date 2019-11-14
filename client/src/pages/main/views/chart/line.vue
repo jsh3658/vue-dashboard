@@ -29,7 +29,7 @@
                 dataEnum: {
                     name: '이름',
                     score: '점수',
-                    country: '국가'
+                    price: '가격'
                 }
             }
         },

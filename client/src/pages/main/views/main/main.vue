@@ -36,7 +36,7 @@
     import getAsyncCall from '@/common/api';
     import dashBoard from '@/common/dashboard.js';
     import Chart from '@/components/chart/chart.vue';
-    import TableComp from '@/components/table/dataTable.vue';
+    import TableComp from '@/components/dataTable/dataTable.vue';
     import DatePicker from '@/components/datePicker/datePicker.vue';
     import Weather from '@/components/weather/weather.vue';
     import Loading from '@/components/loading/loading.vue';
@@ -61,7 +61,7 @@
                     date: '날짜',
                     name: '이름',
                     score: '점수',
-                    country: '국가'
+                    price: '가격'
                 }
             }
         },

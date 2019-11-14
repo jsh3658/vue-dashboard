@@ -17,7 +17,7 @@
     import * as domain from '@/common/domain.js';
     import date from '@/common/dateConfig.js';
     import dashBoard from '@/common/dashboard.js';
-    import TableComp from '@/components/table/dataTable.vue';
+    import TableComp from '@/components/dataTable/dataTable.vue';
     import {pagination} from '@/components/mixins/pagination.js';
     import Loading from '@/components/loading/loading.vue';
     import Error from '@/components/error/error.vue';
@@ -39,7 +39,7 @@
                     date: '날짜',
                     name: '이름',
                     score: '점수',
-                    country: '국가'
+                    price: '가격'
                 }
             }
         },
