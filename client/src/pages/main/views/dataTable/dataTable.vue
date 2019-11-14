@@ -54,7 +54,6 @@
                     URL: dashBoardURL
                 };
 
-                this.loading.table = false;
                 dashBoard(args).then(() => {
                     this.loading.table = false;
                 });

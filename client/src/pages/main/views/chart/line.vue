@@ -23,8 +23,6 @@
             return {
                 chartLists: [
                     {name: 'Chart1', id: 'chart', loading: true, data: []},
-                    {name: 'Chart2', id: 'chart', loading: true, data: []},
-                    {name: 'Chart3', id: 'chart', loading: true, data: []},
                 ],
                 dataEnum: {},
             }
@@ -44,9 +42,10 @@
                     };
 
                     obj.loading = false;
-                    args.URL = domain.url + '';
+                    args.URL = domain.url + '/api/list';
+
                     getAsyncCall(args.TYPE, args.URL).then(res => {
-                        const data = res.data.result;
+                        const data = res.data;
 
                         obj.data = data;
                         obj.loading = false;

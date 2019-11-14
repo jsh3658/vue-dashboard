@@ -8,7 +8,7 @@
         <div class="row">
             <Error v-if="error"/>
             <Loading v-else-if="loading.table" :text="'Loading'"/>
-            <data-table v-else ref="table" :tableData="dataSets" :size="size" :dataEnum="dataEnum" @currentPage="currentPage" @allPage="allPage" @listSize="listSize"/>
+            <table-comp v-else ref="table" :title="'Excel'" :tableData="dataSets" :size="size" :dataEnum="dataEnum" @currentPage="currentPage" @allPage="allPage" @listSize="listSize"/>
         </div>
     </div>
 </template>
@@ -17,7 +17,8 @@
     import * as domain from '@/common/domain.js';
     import date from '@/common/dateConfig.js';
     import dashBoard from '@/common/dashboard.js';
-    import DataTable from '@/components/table/dataTable.vue';
+    import TableComp from '@/components/table/dataTable.vue';
+    import {pagination} from '@/components/mixins/pagination.js';
     import Loading from '@/components/loading/loading.vue';
     import Error from '@/components/error/error.vue';
     import excel from '@/common/excel.js';
@@ -34,10 +35,16 @@
                 loading: {
                     table: true
                 },
-                dataEnum: {}
+                dataEnum: {
+                    date: '날짜',
+                    name: '이름',
+                    age: '나이',
+                    country: '국가'
+                }
             }
         },
-        components: {DataTable, Loading, Error},
+        mixins: [pagination],
+        components: {TableComp, Loading, Error},
         created() {
             this.dataTable();
         },
@@ -46,7 +53,8 @@
         },
         methods: {
             dataTable() {
-                let dashBoardURL = domain.url + '';
+                let dashBoardURL = domain.url + '/api/list';
+
                 let args = {
                     TYPE: 'GET',
                     URL: dashBoardURL
@@ -54,8 +62,7 @@
 
                 dashBoard(args).then(() => {
                     this.loading.table = false;
-                })
-
+                });
             },
             download() {
                 let options = {
