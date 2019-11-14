@@ -146,7 +146,17 @@
                     return true
                 }
                 return false
-            }
+            },
+            pageDraw() {
+                let pages = [];
+
+                // this.activePage = 0;
+                for (let i = this.start; i < this.end; i++) {
+                    pages.push(i + 1);
+                }
+
+                return pages;
+            },
         },
         methods:{
             pageSetting() {
@@ -166,22 +176,12 @@
                         this.end = this.pageGroup;
                     }
 
-                    return this.pageDraw();
+                    return this.pageDraw;
                 } else {
                     this.end = 1;
 
-                    return this.pageDraw();
+                    return this.pageDraw;
                 }
-            },
-            pageDraw() {
-                let pages = [];
-
-                this.activePage = 0;
-                for (let i = this.start; i < this.end; i++) {
-                    pages.push(i + 1);
-                }
-
-                return pages;
             },
             changePage(page, idx) {
                 if(this.activePage !== idx) {

@@ -15,6 +15,8 @@
 ## Development
 ```
 npm install
+cd client npm install
+
 client : npm run client
 server(nodejs) : npm run serve
 client + server : npm run dev
