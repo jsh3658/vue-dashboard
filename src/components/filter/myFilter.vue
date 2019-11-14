@@ -372,8 +372,9 @@
                         }
                     }
                     h5 {
-                        padding: 0 0 24px 10px;
-                        font-size: 13px;
+                        padding: 0 0 25px 10px;
+                        font-size: 14px;
+                        color:#444;
                     }
                     ul {
                         display: flex;
@@ -393,7 +394,7 @@
                                     &:checked{
                                         ~ label {
                                             .check {
-                                                box-shadow: 0px 0px 0px 15px #00bbea inset;
+                                                box-shadow: 0 0 0 15px #00bbea inset;
                                                 border:0;
                                                 &::after {
                                                     opacity: 1;
@@ -407,14 +408,14 @@
                                     display:flex;
                                     align-items: center;
                                     font-family: airBook;
-                                    color: #0d111b;
+                                    color: #777;
                                     cursor: pointer;
-                                    font-size:12px;
+                                    font-size:13px;
                                     .check {
                                         display: inline-block;
-                                        width: 15px;
-                                        height: 15px;
-                                        margin:-2px 8px 0 0;
+                                        width: 17px;
+                                        height: 17px;
+                                        margin:0 9px 0 0;
                                         border-radius: 50%;
                                         background: #fff;
                                         transition: all 0.15s cubic-bezier(0, 1.05, 0.72, 1.07);
@@ -475,7 +476,7 @@
                         overflow-y: auto;
                         ul{
                             li{
-                                margin-bottom:11px;
+                                margin-bottom:14px;
                             }
                         }
                     }

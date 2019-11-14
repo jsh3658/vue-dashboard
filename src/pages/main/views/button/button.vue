@@ -21,8 +21,8 @@
             <ul>
                 <li v-for="(c, i) in checkbox" :key="i">
                     <div class="checkbox">
-                        <label for="check-channel" class="checkbox-label">{{ c.name }}:
-                            <input type="checkbox" class="check-box" id="check-channel" v-model="c.check">
+                        <label :for="'check-channel' + i" class="checkbox-label">{{ c.name }}:
+                            <input type="checkbox" class="check-channel" :id="'check-channel' + i" v-model="c.check">
                             <span class="checkbox-spin"></span>
                         </label>
                     </div>
@@ -162,7 +162,7 @@
             color:#777;
             cursor: pointer;
         }
-        #check-channel {
+        .check-channel {
             visibility: hidden;
             width: $size;
             height: $size;
