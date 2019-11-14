@@ -1,41 +1,17 @@
 {
-  "name": "web_fobis",
-  "version": "0.1.0",
-  "private": true,
+  "name": "vue-dashboard",
+  "version": "1.0.0",
   "scripts": {
-    "serve": "vue-cli-service serve",
-    "build": "vue-cli-service build",
-    "lint": "vue-cli-service lint"
+    "client": "cd client && npm run serve",
+    "server": "nodemon server.js",
+    "dev": "concurrently --kill-others-on-fail \"npm server\" \"npm client\""
   },
   "dependencies": {
-    "axios": "^0.18.0",
-    "core-js": "^2.6.5",
-    "date-fns": "^1.30.1",
-    "echarts": "^4.2.1",
+    "body-parser": "^1.19.0",
     "express": "^4.17.1",
-    "json-bigint": "^0.3.0",
-    "moment": "^2.24.0",
-    "velocity-animate": "^2.0.5",
-    "vue": "^2.6.6",
-    "vue-airbnb-style-datepicker": "^2.6.1",
-    "vue-momentjs": "^0.1.2",
-    "vue-router": "^3.0.1",
-    "vue-skycons": "^1.0.5",
-    "vuex": "^3.0.1",
-    "xlsx": "^0.14.3"
+    "nodemon": "^1.19.4"
   },
   "devDependencies": {
-    "@vue/cli-plugin-babel": "^3.1.1",
-    "@vue/cli-plugin-eslint": "^3.1.1",
-    "@vue/cli-service": "^3.1.1",
-    "babel-eslint": "^10.0.1",
-    "eslint": "^5.8.0",
-    "eslint-plugin-vue": "^5.0.0",
-    "node-sass": "^4.9.0",
-    "sass-loader": "^7.1.0",
-    "stylus": "^0.54.5",
-    "stylus-loader": "^3.0.1",
-    "vue-cli-plugin-vuetify": "^0.5.0",
-    "vue-template-compiler": "^2.5.21"
+    "concurrently": "^5.0.0"
   }
 }

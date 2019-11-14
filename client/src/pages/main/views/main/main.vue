@@ -64,7 +64,7 @@
         components: {Chart, DataTable, DatePicker, Weather, Loading, Error},
         created() {
             this.chart();
-            this.dataTable();
+            // this.dataTable();
         },
         computed: {
             ...mapState(['dataSets', 'error'])
@@ -72,7 +72,7 @@
         methods: {
             chart() {
                 // APi
-                let current = domain.url + '';
+                let current = domain.url + '/main';
 
                 this.loading.chart = true;
                 getAsyncCall('GET', current)

@@ -1,1 +1,0 @@
-export const url = 'http://' +  window.location.host;

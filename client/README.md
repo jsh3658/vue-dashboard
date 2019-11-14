@@ -3,6 +3,7 @@
 <span style="margin:0 2px"><img src="https://img.shields.io/badge/style-sass-yellowgreen.svg" ></span>
 <span style="margin:0 2px"><img src="https://img.shields.io/badge/datePicker-airbnbDatepicker-red.svg" ></span>
 <span style="margin:0 2px"><img src="https://img.shields.io/badge/API-Nodejs-blue.svg" ></span>
+<span style="margin:0 2px"><img src="https://img.shields.io/badge/Chart-echarts-yellow.svg" ></span>
 <span style="margin:0 2px"><img src="https://img.shields.io/github/languages/code-size/beygee/survive.svg" ></span>
 
 ## Main
