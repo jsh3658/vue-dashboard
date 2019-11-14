@@ -15,7 +15,9 @@
 ## Development
 ```
 npm install
-npm serve start
+client : npm run client
+server(node) : npm run serve
+client + server : npm run dev
 ```
 
 ## 사용법
