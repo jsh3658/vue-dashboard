@@ -1,11 +1,11 @@
 <template>
     <div class="content">
-        <my-filter :filter="filter" :filterActive="filterActive" />
+        <filter-comp :filter="filter" :filterActive="filterActive" />
     </div>
 </template>
 
 <script>
-    import MyFilter from '@/components/filter/myFilter.vue';
+    import FilterComp from '@/components/filter/filter.vue';
 
     export default {
         name: "filters",
@@ -31,7 +31,7 @@
             }
         },
         components: {
-            MyFilter
+            FilterComp
         },
     }
 </script>

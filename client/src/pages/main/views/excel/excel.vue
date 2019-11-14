@@ -38,7 +38,7 @@
                 dataEnum: {
                     date: '날짜',
                     name: '이름',
-                    age: '나이',
+                    score: '점수',
                     country: '국가'
                 }
             }

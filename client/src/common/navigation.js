@@ -10,16 +10,16 @@ export const navi = [
                 path: '/main'
             },
             {
-                label: 'DatePicker',
-                path: '/datePicker'
-            },
-            {
                 label: 'Filter',
                 path: '/filter'
             },
             {
                 label: 'DataTable',
                 path: '/dataTable'
+            },
+            {
+                label: 'DatePicker',
+                path: '/datePicker'
             },
             {
                 label: 'tab',
@@ -34,13 +34,9 @@ export const navi = [
                 path: '/chart/line',
                 child: [
                     {
-                        label: 'Line',
+                        label: 'Line, Bar',
                         path: '/chart/line'
-                    },
-                    {
-                        label: 'Bar',
-                        path: '/chart/bar'
-                    },
+                    }
                 ]
             },
             {

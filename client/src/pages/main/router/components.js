@@ -1,6 +1,5 @@
 import Main from '../views/main/main.vue';
 import ChartLine from '../views/chart/line.vue';
-import ChartBar from '../views/chart/bar.vue';
 import DataTable from '../views/dataTable/dataTable.vue'
 import Filter from '../views/filter/filter.vue'
 import DatePicker from '../views/datepicker/datepicker.vue'
@@ -19,7 +18,6 @@ const requireAuth = (to, from, next) => {
 export const Components = [
     { path: '/main', component: Main, beforeEnter: requireAuth },
     { path: '/chart/line', component: ChartLine, beforeEnter: requireAuth },
-    { path: '/chart/bar', component: ChartBar, beforeEnter: requireAuth },
     { path: '/dataTable', component: DataTable, beforeEnter: requireAuth },
     { path: '/filter', component: Filter, beforeEnter: requireAuth },
     { path: '/datePicker', component: DatePicker, beforeEnter: requireAuth },

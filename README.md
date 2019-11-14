@@ -8,7 +8,7 @@
 
 ## Main
 - Material Design
-- DataTable, Chart, datePicker, filter, Excel 등의 탬플릿 화면입니다
+- DataTable, Chart, datePicker, filter, Excel 등의 탬플릿 프로젝트 화면입니다
 - Node js를 이용하여 Restful API개발
 
 
@@ -16,7 +16,7 @@
 ```
 npm install
 client : npm run client
-server(node) : npm run serve
+server(nodejs) : npm run serve
 client + server : npm run dev
 ```
 

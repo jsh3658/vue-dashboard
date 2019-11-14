@@ -12,7 +12,7 @@
         <div class="row">
             <Error v-if="error" class="chart-error" />
             <Loading v-else-if="loading.chart" :text="'Chart Loading'"/>
-            <Chart v-else :chartData="charts" :id="'chart'" :dataEnum="dataEnum" :head="'Chart'"/>
+            <Chart v-else :chartData="charts" :id="'chart'" :dataEnum="dataEnum" :head="'Chart'" :type="'line'"/>
             <div class="info-area">
                 <div class="info-inner">
                     <Weather/>
@@ -25,7 +25,7 @@
         <div class="row">
             <Error v-if="error"/>
             <Loading v-else-if="loading.table" :text="'Loading'"/>
-            <data-table v-else ref="table" :title="'DataTable'" :tableData="dataSets" :size="size" :dataEnum="dataEnum" @currentPage="currentPage" @allPage="allPage" @listSize="listSize"/>
+            <table-comp v-else ref="table" :title="'DataTable'" :tableData="dataSets" :size="size" :dataEnum="dataEnum" @currentPage="currentPage" @allPage="allPage" @listSize="listSize"/>
         </div>
     </div>
 </template>
@@ -35,8 +35,8 @@
     import date from '@/common/dateConfig.js';
     import getAsyncCall from '@/common/api';
     import dashBoard from '@/common/dashboard.js';
-    import Chart from '@/components/chart/line.vue';
-    import DataTable from '@/components/table/dataTable.vue';
+    import Chart from '@/components/chart/chart.vue';
+    import TableComp from '@/components/table/dataTable.vue';
     import DatePicker from '@/components/datePicker/datePicker.vue';
     import Weather from '@/components/weather/weather.vue';
     import Loading from '@/components/loading/loading.vue';
@@ -53,18 +53,23 @@
                     end: date.Yesterday
                 },
                 charts: [],
-                dataEnum: {},
                 loading: {
                     table: true,
                     chart: true
+                },
+                dataEnum: {
+                    date: '날짜',
+                    name: '이름',
+                    score: '점수',
+                    country: '국가'
                 }
             }
         },
         mixins: [pagination],
-        components: {Chart, DataTable, DatePicker, Weather, Loading, Error},
+        components: {Chart, TableComp, DatePicker, Weather, Loading, Error},
         created() {
             this.chart();
-            // this.dataTable();
+            this.dataTable();
         },
         computed: {
             ...mapState(['dataSets', 'error'])
@@ -74,10 +79,9 @@
                 // APi
                 let current = domain.url + '/api/list';
 
-                this.loading.chart = true;
                 getAsyncCall('GET', current)
                     .then(res => {
-                        this.charts = res.data.result.contents;
+                        this.charts = res.data.contents;
                         this.loading.chart = false;
                     })
                     .catch(err => {
@@ -85,17 +89,16 @@
                     });
             },
             dataTable() {
-                // APi
-                let dashBoardURL = domain.url + '';
+                let dashBoardURL = domain.url + '/api/list';
+
                 let args = {
                     TYPE: 'GET',
                     URL: dashBoardURL
                 };
 
-                dashBoard(args)
-                    .then(() => {
-                        this.loading.table = false;
-                    });
+                dashBoard(args).then(() => {
+                    this.loading.table = false;
+                });
             },
             update(s, e) {
                 this.date.start = s;

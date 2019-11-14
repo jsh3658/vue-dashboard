@@ -16,8 +16,8 @@
     import comma from '@/common/comma';
 
     export default {
-        name: "lineChart",
-        props: ['chartData' , 'id', 'dataEnum', 'head'],
+        name: "Chart",
+        props: ['chartData' , 'id', 'dataEnum', 'head', 'type'],
         data() {
             return {
                 Chart: {}
@@ -133,26 +133,12 @@
                             option.xAxis.data = data[i][key];
                         } else {
                             option.legend.data.push(key);
-
-                            if(key === 'revenue') {
-                                option.series.push({
-                                    name: key,
-                                    type: 'line',
-                                    smooth: true,
-                                    data: data[i][key],
-                                    yAxisIndex:1,
-                                    lineStyle: {
-                                        width: 2
-                                    }
-                                });
-                            } else {
-                                option.series.push({
-                                    name: key,
-                                    type: 'line',
-                                    smooth: true,
-                                    data: data[i][key]
-                                });
-                            }
+                            option.series.push({
+                                name: key,
+                                type: this.type,
+                                smooth: true,
+                                data: data[i][key]
+                            });
                         }
                     }
                 }
