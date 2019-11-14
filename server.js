@@ -1,13 +1,15 @@
 const express = require('express');
-const bodyParser = require('body-parser');
+const fs = require('fs');
+const cors = require('cors');
 const app = express();
 const port = process.env.PORT || 3000;
 
-app.use(bodyParser.json());
-app.use(bodyParser.urlencoded({ extended : true }));
+app.use(cors());
 
-app.get('/api/hello', (req, res) => {
-   res.send({message : 'hello '});
+app.get('/api/list', (req, res) => {
+   fs.readFile('data', 'utf8', (err, data) => {
+       res.send(JSON.parse(data));
+   });
 });
 
 

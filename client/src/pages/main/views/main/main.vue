@@ -72,7 +72,7 @@
         methods: {
             chart() {
                 // APi
-                let current = domain.url + '/main';
+                let current = domain.url + '/api/list';
 
                 this.loading.chart = true;
                 getAsyncCall('GET', current)

@@ -11,6 +11,7 @@ const getAsyncCall = (type, url) => {
             return JSONbig.parse(res);
         }
     };
+
     return axios[type.toLowerCase()](url, config)
 };
 

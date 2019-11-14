@@ -26,21 +26,12 @@
                     <th v-for="(head, j) in h" :key="j" :rowspan="head.rowspan" :colspan="head.colspan">
                         <p :style="Object.keys(header).length > 1 ? 'textAlign:center;padding:7px 10px;' : ''">{{ head.text }}</p>
                     </th>
-                    <th v-if="buttonList !== ''"><p>비고</p></th>
                 </tr>
                 </thead>
                 <tbody>
                     <tr v-for="(item, i) in items" :key="i" :data-index="i" :before-enter="beforeEnter" :enter="enter" :leave="leave">
                         <td v-for="(td, j) in Object.values(item)" :key="j">
                             <div class="table-row">{{ td === 'null' ? 0 : td }}</div>
-                        </td>
-                        <td v-if="buttonList !== ''">
-                            <div class="table-row btn-crud">
-                                <button v-if="buttonList.create" class="create" @click="createTable(item, i)">추가</button>
-                                <button v-if="buttonList.read" class="read" @click="readTable(item, i)">읽기</button>
-                                <button v-if="buttonList.update" class="update" @click="updateTable(item, i)">수정</button>
-                                <button v-if="buttonList.delete" class="delete" @click="deleteTable(item, i)">삭제</button>
-                            </div>
                         </td>
                     </tr>
                 </tbody>
@@ -70,7 +61,15 @@
 
     export default {
         name: "dataTable",
-        props: ['tableData', 'title', 'subTitle', 'crud', 'size', 'selectPage', 'dataEnum', 'tableExpand'],
+        props: [
+            'tableData',
+            'title',
+            'subTitle',
+            'size',
+            'selectPage',
+            'dataEnum',
+            'tableExpand'
+        ],
         data() {
             return {
                 activePage: 0,
@@ -147,11 +146,6 @@
                     return true
                 }
                 return false
-            },
-            buttonList() {
-                let arr = this.crud || '';
-
-                return arr;
             }
         },
         methods:{
@@ -236,18 +230,6 @@
 
                     this.$emit('currentPage', this.start);
                 }
-            },
-            createTable(...args) {
-                this.$emit('createTb', args);
-            },
-            readTable(...args) {
-                this.$emit('readTb', args);
-            },
-            updateTable(...args) {
-                this.$emit('updateTb', args);
-            },
-            deleteTable(...args) {
-                this.$emit('deleteTb', args);
             },
             beforeEnter: function (el) {
                 el.style.opacity = 0;
