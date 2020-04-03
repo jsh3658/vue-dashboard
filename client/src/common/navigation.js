@@ -45,7 +45,7 @@ export const navi = [
             },
             {
                 label: 'Test',
-                path: '/test'
+                path: '/test12312321'
             },
         ]
     }
