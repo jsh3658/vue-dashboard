@@ -1,6 +1,6 @@
 {
   "name": "vue-dashboard",
-  "version": "1.0.0",
+  "version": "1.0.2",
   "scripts": {
     "client": "cd client && npm run serve",
     "server": "pm2 start server.js",
