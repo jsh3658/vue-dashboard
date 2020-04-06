@@ -43,6 +43,10 @@ export const navi = [
                 label: 'Button',
                 path: '/button'
             },
+            {
+                label: 'Test',
+                path: '/test12312321'
+            },
         ]
     }
 ];
